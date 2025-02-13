@@ -22,7 +22,7 @@ void printMenArr(const int*arr,int size){// void printMenArr(int arr[],int size)
  * @param size - the number of elements in the array
  */
 void incArrBy10(int*arr,int size){//voidincArrBy10 (int arr[],int size)
-    for(int i=0;i<size,i++;){
+    for(int i=0;i<size;i++){
         arr[i]+=10;
 
     }
