@@ -1,5 +1,7 @@
 #include<iostream>
 #include<vector>
+
+
 using namespace std;
 
 /**
@@ -9,7 +11,7 @@ using namespace std;
  */
 void printMemvec(const int *vec, int size){// void printMemvec(const int *vec,int size)
 
-    cout<<"vector -each int is worth %lu bytes\n", sizeof(vec[0]);// not working
+    printf("vector -each int is worth %lu bytes\n", sizeof(vec[0]));
 
     for(int i=0; i<size;i++){
     printf("value: %i at memory location : %p\n", vec[i],vec+i);
@@ -26,8 +28,11 @@ void incvecBy10(int*vec,int size){
 }
 
 int main(){
-    const int SIZE=5;
-    int vec[SIZE];
+    
+     const int SIZE=5;
+     
+     int vec[SIZE];
+    
 
     for(int i=0;i<SIZE;i++){
         vec[i]=100+i;
@@ -39,6 +44,8 @@ int main(){
     incvecBy10(vec,SIZE);
     printf("after increment----------------\n");
     printMemvec(vec,SIZE);
+    
+
 
 
 
