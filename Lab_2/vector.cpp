@@ -21,8 +21,8 @@ void printMemvec(vector<int> &vec, int size){// void printMemvec(const int &vec,
 /**
  * @brief increaments all of the elements in vec by 10
  * 
- * @param vec - vector of integer
- * @param size - the number of elements in the vector
+ * @param vec - address to a vector of integers
+ *
  */
   
 void incvecBy10(vector<int> &vec,int size){//voidincvecBy10 (int &vec,int size)
