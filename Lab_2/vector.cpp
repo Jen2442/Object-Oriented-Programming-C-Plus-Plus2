@@ -9,7 +9,7 @@ using namespace std;
  * 
  * @param vec - vector of integer
  */
-void printMemvec(vector<int> &vec, int size){// void printMemvec(const int *vec,int size)
+void printMemvec(vector<int> &vec, int size){// void printMemvec(const int &vec,int size)
 
     printf("vector -each int is worth %lu bytes\n", sizeof(vec[0]));
     for(int i=0; i<size;i++){
@@ -18,8 +18,14 @@ void printMemvec(vector<int> &vec, int size){// void printMemvec(const int *vec,
     }
 
 }
+/**
+ * @brief increaments all of the elements in vec by 10
+ * 
+ * @param vec - vector of integer
+ * @param size - the number of elements in the vector
+ */
   
-void incvecBy10(vector<int> &vec,int size){
+void incvecBy10(vector<int> &vec,int size){//voidincvecBy10 (int &vec,int size)
     for(int i=0;i<size;i++){
         vec[i]+=9;
 
