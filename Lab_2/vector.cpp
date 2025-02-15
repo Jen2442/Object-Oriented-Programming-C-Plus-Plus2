@@ -7,7 +7,7 @@ using namespace std;
 /**
  * @brief prints the elements in the vector and their memory locations
  * 
- * @param arr - vector of integer
+ * @param vec - vector of integer
  */
 void printMemvec(vector<int> &vec, int size){// void printMemvec(const int *vec,int size)
 
@@ -53,10 +53,6 @@ int main(){
     printf("After Push---------------\n");
     printMemvec(vec,SIZE);
 
-
-
-
-    //hello33
 
     return 0;
 
