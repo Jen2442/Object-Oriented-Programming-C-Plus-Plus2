@@ -9,20 +9,19 @@ using namespace std;
  * 
  * @param arr - vector of integer
  */
-void printMemvec(const int *vec, int size){// void printMemvec(const int *vec,int size)
+void printMemvec(vector<int> &vec, int size){// void printMemvec(const int *vec,int size)
 
     printf("vector -each int is worth %lu bytes\n", sizeof(vec[0]));
-
     for(int i=0; i<size;i++){
-    printf("value: %i at memory location : %p\n", vec[i],vec+i);
-
+        printf("value: %i at memory location : %p\n", vec[i], &vec[i]);
+        vec[i]++;
     }
 
 }
   
-void incvecBy10(int*vec,int size){
+void incvecBy10(vector<int> &vec,int size){
     for(int i=0;i<size;i++){
-        vec[i]+=10;
+        vec[i]+=9;
 
     }
 }
@@ -31,7 +30,7 @@ int main(){
     
      const int SIZE=5;
      
-     int vec[SIZE];
+     vector<int> vec(SIZE);
     
 
     for(int i=0;i<SIZE;i++){
@@ -45,11 +44,19 @@ int main(){
     printf("after increment----------------\n");
     printMemvec(vec,SIZE);
     
+    printf("After Pop---------------\n");
+    vec.pop_back();
+    printMemvec(vec,SIZE);
+    vec.pop_back();
+    vec.push_back(101);
+    vec.push_back(102);
+    printf("After Push---------------\n");
+    printMemvec(vec,SIZE);
 
 
 
 
-    //hello
+    //hello33
 
     return 0;
 
