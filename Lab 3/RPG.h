@@ -20,6 +20,11 @@ Class RPG{
     int getdefense() const;
     string gettype() const;
 
+    void setSkills();
+    void 
+
+
+
 
 
 }
