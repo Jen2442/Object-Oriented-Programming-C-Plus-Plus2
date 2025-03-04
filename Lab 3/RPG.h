@@ -21,11 +21,15 @@ Class RPG{
     string gettype() const;
 
     void setSkills();
-    void 
 
 
 
 
+   private:
+   string type;
+   string skills [SKILL_SIZE];
+
+   
 
 }
    
