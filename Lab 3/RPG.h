@@ -30,11 +30,11 @@ class RPG {
    private:
 
    string type;
-   string Skills [SKILL_SIZE];
-   string Name;
-   int Health;
-   int Strngth;
-   int Defense;
+   string skills [SKILL_SIZE];
+   string name;
+   int health;
+   int strngth;
+   int defense;
 
 
    
