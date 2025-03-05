@@ -32,9 +32,7 @@ int RPG::getStrength() const{
 int RPG::getDefense() const{
     return defense;
 }
-bool RPG::isAlive() const{
-    return health > 0;
-}
+
 array<string, SKILL_SIZE> RPG::getSkills() const{
     return skills;
 }
@@ -59,24 +57,14 @@ void RPG::setSkills(){
 void RPG::updateHealth(int new_health){
     this->health = new_health;
 }
-void RPG::useSkill(RPG target, string skill){
-    int damage = (strength2) - target->getDefense();
-    if(damage < 0){
-        damage = 0;
-    }
-    target->updateHealth(target->getHealth() - damage);
-    printAction(skill, target);
+bool RPG::isAlive() const{
+    return health > 0;
 }
-void RPG::attack(RPGtarget) {
-    int damage = strength - target->getDefense();
-    if (damage < 0) {
-        damage = 0;
-    }
-    target->updateHealth(target->getHealth() - damage);
-    printAction("attack", *target);
+string RPG::getType() const
+{
+    return type;
 }
-void RPG::printAction(string skill, RPG target){
+void RPG::printAction(string skill, RPG target)
+{
     printf("%s used %s on %s\n", name.c_str(), skill.c_str(), target.getName().c_str());
 }
-
-

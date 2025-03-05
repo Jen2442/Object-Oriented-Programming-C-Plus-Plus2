@@ -19,13 +19,14 @@ class RPG {
     int getStrength() const;
     int getDefense() const;
     bool isAlive() const;
+    string getType() const;
 /////////
     void setSkills();
     void printAction(string,RPG);
     void updateHealth(int);
-    void attack(RPG target);
+    /**void attack(RPG target);
     void useSkill(RPG target, string skill);
-
+**/
 ////////////////////////
    private:
 
