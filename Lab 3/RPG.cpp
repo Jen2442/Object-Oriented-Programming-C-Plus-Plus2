@@ -78,3 +78,5 @@ void RPG::attack(RPGtarget) {
 void RPG::printAction(string skill, RPG target){
     printf("%s used %s on %s\n", name.c_str(), skill.c_str(), target.getName().c_str());
 }
+
+
