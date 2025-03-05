@@ -32,7 +32,10 @@ int RPG::getStrength() const{
 int RPG::getDefense() const{
     return defense;
 }
-
+string RPG::getType() const
+{
+    return type;
+}
 array<string, SKILL_SIZE> RPG::getSkills() const{
     return skills;
 }
@@ -59,10 +62,6 @@ void RPG::updateHealth(int new_health){
 }
 bool RPG::isAlive() const{
     return health > 0;
-}
-string RPG::getType() const
-{
-    return type;
 }
 void RPG::printAction(string skill, RPG target)
 {
