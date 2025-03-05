@@ -9,18 +9,24 @@ const int SKILL_SIZE=2;
 
 Class RPG{
 
-    PUBLIC:
+    PUBLIC:RPG();
     //CONSTRUCTORS
-    RPG();
+   
     RPG(string name, int health, int strentgh, int defense, string type);
 
     string getname() const;
     int gethealth() const;
     int getstrength() const;
     int getdefense() const;
-    string gettype() const;
+    bool isalive() const;
 
-    void setSkills();
+
+
+    void setskills();
+    void print action(string,RPG);
+    void updatehealth(int);
+    void attack(RPG*);
+    void useskill(RPG*);
 
 
 
@@ -28,8 +34,14 @@ Class RPG{
    private:
    string type;
    string skills [SKILL_SIZE];
+   string name;
+   int health;
+   int strngth;
+   int defense;
+
 
    
 
 }
    
+#endif
