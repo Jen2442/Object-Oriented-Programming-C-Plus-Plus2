@@ -7,30 +7,28 @@ using namespace std;
 
 const int SKILL_SIZE=2;
 
-Class RPG {
+class RPG {
 
-    PUBLIC:
+    public:
+    /////////////////
     RPG();
     RPG(string name, int health, int strentgh, int defense, string type);
-
+/////////////////////
     string getName() const;
     int getHealth() const;
     int getStrength() const;
     int getDefense() const;
     bool isAlive() const;
-
-
-
+/////////
     void setSkills();
     void printAction(string,RPG);
     void updateHealth(int);
-    void Attack(RPG*);
-    void useSkill(RPG*);
+    void attack(RPG target);
+    void useSkill(RPG target, string skill);
 
-
-
-
+////////////////////////
    private:
+
    string type;
    string Skills [SKILL_SIZE];
    string Name;
