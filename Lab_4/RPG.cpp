@@ -10,10 +10,11 @@ RPG::RPG(){
     strength = 10;
     defense = 10;
     type = "warrior";
-    skills[0] = "slash";
-    skills[1] = "parry";
+   setSkills();
+
 }
 
+///////////////////////////////////////////////////
 
 RPG::RPG(string name, int health, int strength, int defense, string type){
     this->name = name;
@@ -24,6 +25,7 @@ RPG::RPG(string name, int health, int strength, int defense, string type){
     setSkills();
 }
 
+////////////////////////////////////////////////////
 
 string RPG::getName() const{
     return name;
@@ -49,11 +51,7 @@ bool RPG::isAlive() const{
     return health > 0;
 }
 
-
-array<string, SKILL_SIZE> RPG::getSkills() const{
-    return skills;
-}
-
+////////////////////////////////////////////////////////////
 
 void RPG::setSkills(){
     if(type == "mage"){
@@ -74,30 +72,56 @@ void RPG::setSkills(){
     }
 }
 
+//////////////////////////////////////////////////////////////////
 
 void RPG::updateHealth(int new_health){
     this->health = new_health;
 }
 
-void RPG::printAction(string skill, RPG target){
+/////////////////////////////////////////////////////////
+
+/**void RPG::printAction(string skill, RPG target){
     printf("%s used %s on %s\n", name.c_str(), skill.c_str(), target.getName().c_str());
+}*/
+
+//////////////////////////////////////////////////////////
+
+void RPG::attack(RPG * target) {
+    int damage = strength - target.getDefense();
+    if (damage < 1) {
+        damage = 1;
+    }
+    
+    int newhealth=(*target).getHealth()-damage;
+
+    if (newhealth<0){
+     newhealth=0;
+    }
+    (*target).updateHealth(newhealth);
+    printAction("attack",target);
+
 }
 
-void RPG::attack(RPG target) {
-    int damage = strength - target->getDefense();
-    if (damage < 0) {
-        damage = 0;
+/////////////////////////////////////////////////////////////
+
+void RPG::useSkill(RPG * target){
+
+    for (int i=0;i<SKILL_SIZE;i++){
+        printf("Skill %i: %s\n",i,skills[i].c_str());
+
     }
-    target->updateHealth(target->getHealth() - damage);
-    printAction("attack", *target);
+
 }
 
-void RPG::useSkill(RPG target, string skill)
-{
-    int damage = (strength2) - target->getDefense();
-    if(damage < 0){
-        damage = 0;
-    }
-    target->updateHealth(target->getHealth() - damage);
-    printAction(skill, target);
-}
+/////////////////////////////////////////////////////
+
+int skillchoiceindex;
+cou<< "choose a skill to use: enter 0 or 1" endl;
+cin>>skillchoiceindex;
+
+string skillchoice=skills[skillchoiceindex];
+
+printAction(skillchoice,target);
+
+attack(target);
+

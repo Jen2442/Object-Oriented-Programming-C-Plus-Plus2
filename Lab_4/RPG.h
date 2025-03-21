@@ -15,30 +15,41 @@ class RPG {
     RPG(string name, int health, int strentgh, int defense, string type);
 /////////////////////
     string getName() const;
+
     int getHealth() const;
+
     int getStrength() const;
+
     int getDefense() const;
+
     bool isAlive() const;
-    string getType() const;
-/////////
+    
+//////////////////////////
     void setSkills();
+
     void printAction(string,RPG);
+
     void updateHealth(int);
+
     void attack(RPG target);
+
     void useSkill(RPG target, string skill);
 
 ////////////////////////
    private:
 
    string type;
+   
    string skills [SKILL_SIZE];
+
    string name;
+
    int health;
-   int strngth;
+
+   int strength;
+
    int defense;
 
-
-   
 
 };
    
