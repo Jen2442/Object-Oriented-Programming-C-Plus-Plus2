@@ -1,6 +1,7 @@
 #include "RPG.h"
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 RPG::RPG(){
@@ -12,6 +13,8 @@ RPG::RPG(){
     skills[0] = "slash";
     skills[1] = "parry";
 }
+
+
 RPG::RPG(string name, int health, int strength, int defense, string type){
     this->name = name;
     this->health = health;
@@ -20,24 +23,38 @@ RPG::RPG(string name, int health, int strength, int defense, string type){
     this->type = type;
     setSkills();
 }
+
+
 string RPG::getName() const{
     return name;
 }
+
+
 int RPG::getHealth() const{
     return health;
 }
+
+
 int RPG::getStrength() const{
     return strength;
 }
+
+
 int RPG::getDefense() const{
     return defense;
 }
+
+
 bool RPG::isAlive() const{
     return health > 0;
 }
+
+
 array<string, SKILL_SIZE> RPG::getSkills() const{
     return skills;
 }
+
+
 void RPG::setSkills(){
     if(type == "mage"){
         skills[0] = "fire";
@@ -56,10 +73,24 @@ void RPG::setSkills(){
         skills[1] = "parry";
     }
 }
+
+
 void RPG::updateHealth(int new_health){
     this->health = new_health;
 }
 
+void RPG::printAction(string skill, RPG target){
+    printf("%s used %s on %s\n", name.c_str(), skill.c_str(), target.getName().c_str());
+}
+
+void RPG::attack(RPG target) {
+    int damage = strength - target->getDefense();
+    if (damage < 0) {
+        damage = 0;
+    }
+    target->updateHealth(target->getHealth() - damage);
+    printAction("attack", *target);
+}
 
 void RPG::useSkill(RPG target, string skill)
 {
@@ -69,15 +100,4 @@ void RPG::useSkill(RPG target, string skill)
     }
     target->updateHealth(target->getHealth() - damage);
     printAction(skill, target);
-}
-void RPG::attack(RPG target) {
-    int damage = strength - target->getDefense();
-    if (damage < 0) {
-        damage = 0;
-    }
-    target->updateHealth(target->getHealth() - damage);
-    printAction("attack", *target);
-}
-void RPG::printAction(string skill, RPG target){
-    printf("%s used %s on %s\n", name.c_str(), skill.c_str(), target.getName().c_str());
 }
