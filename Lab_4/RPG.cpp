@@ -75,57 +75,51 @@ void RPG::setSkills(){
 //////////////////////////////////////////////////////////////////
 
 void RPG::updateHealth(int new_health){
-    this->health = new_health;
+    health = new_health;
 }
 
 /////////////////////////////////////////////////////////
 
-void RPG::printAction(string skill, RPG target){
-    printf("%s used %s on %s\n", name.c_str(), skill.c_str(), target.getName().c_str());
+void RPG::printAction(string skill, RPG *opponent){
+    printf("%s used %s on %s\n", name.c_str(), skill.c_str(), (*opponent).getName().c_str());
 }
 
 //////////////////////////////////////////////////////////
 
-void RPG::attack(RPG * target) {
-    int damage = strength - target.getDefense();
+void RPG::attack(RPG * opponent) {
+    int damage = strength - (*opponent).getDefense();
     if (damage < 1) {
         damage = 1;
     }
     
-    int newhealth=(*target).getHealth()-damage;
+    int newhealth=(*opponent).getHealth()-damage;
 
     if (newhealth<0){
      newhealth=0;
     }
-    (*target).updateHealth(newhealth);
-    printAction("attack",target);
+    (*opponent).updateHealth(newhealth);
+    printAction("attack",opponent);
 
 }
 
 /////////////////////////////////////////////////////////////
 
-void RPG::useSkill(RPG * target){
+void RPG::useSkill(RPG * opponent){
 
     for (int i=0;i<SKILL_SIZE;i++){
         printf("Skill %i: %s\n",i,skills[i].c_str());
 
     }
 
-}
-
-/////////////////////////////////////////////////////
-
-int skillchoiceindex;
-cou<< "choose a skill to use: enter 0 or 1" endl;
-
-cin>> skillchoiceindex ;
+    int skillchoiceindex;
+cout<< "choose a skill to use: enter 0 or 1"<< endl;
+cin>> skillchoiceindex;
 
 string skillchoice=skills[skillchoiceindex];
 
-printAction(skillchoice,target);
+printAction(skillchoice,opponent);
 
-attack(target);
+attack(opponent);
 
-printAction(skillchoice, target)
-{
 }
+

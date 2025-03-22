@@ -1,4 +1,4 @@
-#ifndef RPG_H
+
 #define RPG_H
 #include <iostream> 
 #include <string>
@@ -27,13 +27,13 @@ class RPG {
 //////////////////////////
     void setSkills();
 
-    void printAction(string,RPG);
+    void printAction(string type,RPG*user);
 
     void updateHealth(int);
 
-    void attack(RPG *target);
+    void attack(RPG *user);
 
-    void useSkill(RPG* target);
+    void useSkill(RPG* user);
 
 ////////////////////////
    private:
@@ -53,4 +53,4 @@ class RPG {
 
 };
    
-#endif
+
