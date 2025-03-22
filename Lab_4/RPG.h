@@ -31,9 +31,9 @@ class RPG {
 
     void updateHealth(int);
 
-    void attack(RPG target);
+    void attack(RPG *target);
 
-    void useSkill(RPG target, string skill);
+    void useSkill(RPG* target);
 
 ////////////////////////
    private:

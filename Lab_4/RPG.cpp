@@ -80,9 +80,9 @@ void RPG::updateHealth(int new_health){
 
 /////////////////////////////////////////////////////////
 
-/**void RPG::printAction(string skill, RPG target){
+void RPG::printAction(string skill, RPG target){
     printf("%s used %s on %s\n", name.c_str(), skill.c_str(), target.getName().c_str());
-}*/
+}
 
 //////////////////////////////////////////////////////////
 
@@ -117,7 +117,8 @@ void RPG::useSkill(RPG * target){
 
 int skillchoiceindex;
 cou<< "choose a skill to use: enter 0 or 1" endl;
-cin>>skillchoiceindex;
+
+cin>> skillchoiceindex ;
 
 string skillchoice=skills[skillchoiceindex];
 
@@ -125,3 +126,6 @@ printAction(skillchoice,target);
 
 attack(target);
 
+printAction(skillchoice, target)
+{
+}
