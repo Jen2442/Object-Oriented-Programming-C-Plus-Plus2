@@ -17,4 +17,4 @@ void speak()/*override*/;
  vector<string> skills;
  /*name,hp,attack,defense*/
 };
-#endif
+

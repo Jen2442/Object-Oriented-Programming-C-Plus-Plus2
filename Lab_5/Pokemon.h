@@ -6,8 +6,7 @@
 using namespace std;
 
 class Pokemon{
-
-    public:
+ public:
     //-------------contructors-------------------
     Pokemon();
     Pokemon(string name, int hp, int att, int def, vector<string> type);
@@ -16,7 +15,7 @@ class Pokemon{
     virtual void printStats();
     //------------Accessor Functions---------------
 
-    protected:
+ protected:
 
     string name;
     int hp;
@@ -24,6 +23,8 @@ class Pokemon{
     int defense;
     vector<string> type;
 
-}:
+};
+
 #endif
+
 
