@@ -41,7 +41,7 @@ vector<vector<int>> findPath( const vector<vector<int>>& grid, int srcX, int src
 
             path.push_back({srcX, srcY});
 
-            // Reverse path manually
+            
             vector<vector<int>> finalPath;
             for (int i = path.size() - 1; i >= 0; --i) {
                 finalPath.push_back(path[i]);
